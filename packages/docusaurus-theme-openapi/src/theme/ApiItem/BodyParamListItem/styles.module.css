@@ -1,0 +1,71 @@
+.propertySection,
+.propertyListItem {
+  padding: 8px;
+}
+
+.propertySection {
+  --ifm-paragraph-margin-bottom: 0;
+
+  width: 100%;
+}
+
+.propertyListItem + .propertyListItem {
+  border-top: 1px solid var(--openapi-border-color);
+}
+
+.propertySection + .propertySection {
+  border-top: 1px solid var(--openapi-border-color);
+}
+
+.propertySectionExpandable {
+  margin: 0 10px;
+  border: 1px solid var(--openapi-border-color);
+  border-radius: var(--openapi-card-border-radius);
+  overflow: hidden;
+}
+
+.propertySectionExpandableHeader {
+  border-bottom: 1px solid var(--openapi-border-color);
+}
+
+.paramType {
+  color: #637288;
+  font-size: 12px;
+  white-space: nowrap;
+  padding-left: 5px;
+}
+
+.paramRequired {
+  color: var(--openapi-api-param-required);
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.paramHeader {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: nowrap;
+}
+
+.paramName:not(:last-child):not(:only-child),
+.paramType:not(:last-child):not(:only-child),
+.paramRequired:not(:last-child):not(:only-child) {
+  margin-right: 5px;
+}
+
+.menuItemText span {
+  display: flex;
+  align-items: center;
+}
+
+.controlIconDefault {
+  color: #939eae;
+}
+
+.controlIconValid {
+  color: #12ca93;
+}
+
+.controlIconRequired {
+  color: #e95f6a;
+}

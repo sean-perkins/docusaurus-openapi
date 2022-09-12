@@ -1,0 +1,9 @@
+.apiDocHeader {
+  position: relative;
+
+  border-bottom: 1px solid var(--openapi-border-color);
+}
+
+.apiDocDescription {
+  margin-top: 10px;
+}
