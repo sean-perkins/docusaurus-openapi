@@ -1,0 +1,152 @@
+:root {
+  --openapi-http-status-success-background: #12ca93;
+  --openapi-http-status-error-background: #e95f6a;
+
+  --openapi-border-color: rgba(0, 0, 0, 0.1);
+}
+
+.apiResponseSchemaPickerOption {
+  display: flex;
+  flex: 1 1 auto;
+  justify-content: space-between;
+  align-items: center;
+
+  cursor: pointer;
+
+  padding: 10px;
+  background: var(--openapi-card-background-color);
+  box-shadow: inset 0 1px 0 rgb(255 255 255 / 10%);
+  border: 1px solid var(--openapi-border-color);
+}
+
+.apiResponseSchemaPickerOption:first-child {
+  border-top-left-radius: var(--openapi-card-border-radius);
+  border-top-right-radius: var(--openapi-card-border-radius);
+}
+
+.apiResponseSchemaPickerOption:last-child {
+  border-bottom-left-radius: var(--openapi-card-border-radius);
+  border-bottom-right-radius: var(--openapi-card-border-radius);
+}
+
+.apiResponseSchemaPickerOption + .apiResponseSchemaPickerOption {
+  margin-top: -1px;
+}
+
+.apiResponseSchemaPickerOption:hover {
+  background: var(--openapi-card-hover-background-color);
+}
+
+.apiResponseSchemaPickerOptionLabel {
+  display: flex;
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: capitalize;
+  align-items: center;
+  color: #4f5a66;
+}
+
+.apiResponseSchemaPickerDescription {
+  font-size: 13px;
+  color: #637288;
+  word-wrap: break-word;
+}
+
+.apiResponseSchemaPickerDescription p {
+  margin: 0;
+}
+
+.httpStatus {
+  display: inline-flex;
+  align-items: center;
+
+  padding: 5px 3px;
+  border: 0;
+
+  -webkit-box-align: center;
+
+  margin-right: 5px;
+
+  background-color: transparent;
+}
+
+.apiResponseSchemaPickerIcon {
+  font-size: 14px !important;
+}
+
+.httpStatusChit {
+  background: var(--openapi-card-background-color);
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5),
+    inset 0 -1px 2px var(--openapi-border-color),
+    0 1px 3px var(--openapi-border-color);
+  height: 10px;
+  width: 10px;
+}
+
+.httpStatus_2 {
+  background: var(--openapi-http-status-success-background);
+}
+
+.httpStatus_4 {
+  background: var(--openapi-http-status-error-background);
+}
+
+.dialogContent {
+  padding-top: 20px !important;
+
+  background: var(--openapi-card-background-color);
+}
+
+div.dialogContentCard {
+  border-radius: var(--openapi-card-border-radius);
+}
+
+.dialogHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border-bottom: 1px solid var(--openapi-border-color);
+}
+
+.dialogHeader h2 {
+  font-weight: bold;
+}
+
+.dialogHeader h2 > div {
+  margin-left: 10px;
+}
+
+.dialogFooter {
+  border-top: 1px solid var(--openapi-border-color);
+}
+
+.dialogContentCardHeader {
+  border-bottom: 1px solid var(--openapi-border-color);
+}
+
+.paramType {
+  color: #637288;
+  font-size: 12px;
+  white-space: nowrap;
+  padding-left: 5px;
+}
+
+.propertySection {
+  padding: 16px;
+}
+
+.propertySection + .propertySection {
+  border-top: 1px solid var(--openapi-border-color);
+}
+
+.propertyList {
+  border-radius: var(--openapi-card-border-radius);
+  border: 1px solid var(--openapi-border-color);
+  background: var(--openapi-card-background-color);
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+}

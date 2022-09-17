@@ -15,6 +15,7 @@ export function createComponentImports() {
     'import ParamListItem from "@theme/ApiItem/ParamListItem";',
     'import RequestBody from "@theme/ApiItem/RequestBody";',
     'import BodyParamListItem from "@theme/ApiItem/BodyParamListItem";',
+    'import StatusCodeListItem from "@theme/ApiItem/StatusCodeListItem";',
     'import SchemaObject from "@theme/ApiItem/SchemaObject";',
   ].join("\n");
 }

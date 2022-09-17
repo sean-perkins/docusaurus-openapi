@@ -25,52 +25,62 @@ export function createStatusCodesTable({ responses }: Props) {
     return undefined;
   }
 
-  return createFullWidthTable({
-    children: [
-      create("thead", {
-        children: create("tr", {
-          children: create("th", {
-            style: { textAlign: "left" },
-            children: `Responses`,
-          }),
-        }),
-      }),
-      create("tbody", {
-        children: codes.map((code) =>
-          create("tr", {
-            children: create("td", {
-              children: [
-                create("div", {
-                  style: { display: "flex" },
-                  children: [
-                    create("div", {
-                      style: { marginRight: "var(--ifm-table-cell-padding)" },
-                      children: create("code", {
-                        children: code,
-                      }),
-                    }),
-                    create("div", {
-                      children: createDescription(responses[code].description),
-                    }),
-                  ],
-                }),
-                create("div", {
-                  children: createSchemaTable({
-                    style: {
-                      marginTop: "var(--ifm-table-cell-padding)",
-                      marginBottom: "0px",
-                    },
-                    title: "Schema",
-                    body: {
-                      content: responses[code].content,
-                    },
-                  }),
-                }),
-              ],
-            }),
-          })
-        ),
-      }),
-    ],
+  return create("ContentSection", {
+    title: "Responses",
+    children: codes.map((code, index) => {
+      return create("StatusCodeListItem", {
+        key: index,
+        code,
+        children: responses[code].description,
+      });
+    }),
   });
+  // return createFullWidthTable({
+  //   children: [
+  //     create("thead", {
+  //       children: create("tr", {
+  //         children: create("th", {
+  //           style: { textAlign: "left" },
+  //           children: `Responses`,
+  //         }),
+  //       }),
+  //     }),
+  //     create("tbody", {
+  //       children: codes.map((code) =>
+  //         create("tr", {
+  //           children: create("td", {
+  //             children: [
+  //               create("div", {
+  //                 style: { display: "flex" },
+  //                 children: [
+  //                   create("div", {
+  //                     style: { marginRight: "var(--ifm-table-cell-padding)" },
+  //                     children: create("code", {
+  //                       children: code,
+  //                     }),
+  //                   }),
+  //                   create("div", {
+  //                     children: createDescription(responses[code].description),
+  //                   }),
+  //                 ],
+  //               }),
+  //               create("div", {
+  //                 children: createSchemaTable({
+  //                   style: {
+  //                     marginTop: "var(--ifm-table-cell-padding)",
+  //                     marginBottom: "0px",
+  //                   },
+  //                   title: "Schema",
+  //                   body: {
+  //                     content: responses[code].content,
+  //                   },
+  //                 }),
+  //               }),
+  //             ],
+  //           }),
+  //         })
+  //       ),
+  //     }),
+  //   ],
+  // });
 }

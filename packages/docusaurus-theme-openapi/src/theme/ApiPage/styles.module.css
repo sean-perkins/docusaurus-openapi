@@ -35,6 +35,9 @@
   --openapi-required: var(--openapi-code-red);
 
   --openapi-card-background-color: #f6f8fa;
+  --openapi-card-hover-background-color: var(
+    --ifm-dropdown-hover-background-color
+  );
   --openapi-card-border-radius: var(--ifm-pre-border-radius);
   /* --openapi-card-border-radius: var(--ifm-card-border-radius); */
 
