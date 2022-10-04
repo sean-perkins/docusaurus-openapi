@@ -9,6 +9,7 @@ import React from "react";
 
 import type { ParameterObject } from "docusaurus-plugin-openapi/src/openapi/types";
 
+import { getSchemaQualifiedType } from "../../../utils";
 import styles from "./styles.module.css";
 
 interface Props {
@@ -35,28 +36,6 @@ function renderSchema(schema: ParameterObject["schema"]): JSX.Element | null {
     );
   }
   return null;
-}
-
-function getSchemaQualifiedType(schema: ParameterObject["schema"]): string {
-  if (!schema) {
-    return "";
-  }
-  if (schema.format) {
-    return schema.format;
-  }
-  if (schema.type) {
-    if (schema.type === "array") {
-      if (schema.items?.type) {
-        /**
-         * Displays the type of the array items, e.g. "string[]".
-         */
-        return `${schema.items.type}[]`;
-      }
-      return schema.type;
-    }
-    return schema.type;
-  }
-  return "";
 }
 
 function ParamListItem({ param, children }: Props) {

@@ -6,9 +6,6 @@
  * ========================================================================== */
 
 import { ApiItem } from "../types";
-import { createDescription } from "./createDescription";
-import { createFullWidthTable } from "./createFullWidthTable";
-import { createSchemaTable } from "./createSchemaTable";
 import { create } from "./utils";
 
 interface Props {
@@ -27,13 +24,21 @@ export function createStatusCodesTable({ responses }: Props) {
 
   return create("ContentSection", {
     title: "Responses",
-    children: codes.map((code, index) => {
-      return create("StatusCodeListItem", {
-        key: index,
-        code,
-        children: responses[code].description,
-      });
-    }),
+    children: [
+      create("StatusCodeTable", {
+        codes,
+        responses,
+        children: codes.map((code, index) => {
+          const response = responses[code];
+          return create("StatusCodeListItem", {
+            key: index,
+            code,
+            response,
+            children: response.description,
+          });
+        }),
+      }),
+    ],
   });
   // return createFullWidthTable({
   //   children: [

@@ -78,6 +78,10 @@ function ApiItem(props: Props): JSX.Element {
       options,
     });
 
+    const statusCode = {
+      isDialogOpen: false,
+    };
+
     const persistanceMiddleware = createPersistanceMiddleware(options);
 
     store2 = createStoreWithState(
@@ -89,6 +93,7 @@ function ApiItem(props: Props): JSX.Element {
         body: { type: "empty" },
         params,
         auth,
+        statusCode,
       },
       [persistanceMiddleware]
     );

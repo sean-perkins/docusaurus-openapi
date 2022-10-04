@@ -23,6 +23,11 @@ export function getSchemaQualifiedType(
   }
   if (schema.type) {
     if (schema.type === "array") {
+      if (schema.items?.xml) {
+        if (schema.items.xml.name) {
+          return `${schema.items.xml.name}[]`;
+        }
+      }
       if (schema.items?.type) {
         /**
          * Displays the type of the array items, e.g. "string[]".

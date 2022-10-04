@@ -10,21 +10,25 @@ import React from "react";
 import OpenInFullIcon from "@mui/icons-material/OpenInFull";
 import clsx from "clsx";
 
+import { useTypedDispatch } from "../../ApiDemoPanel/hooks";
+import { setStatusCode, setDialogOpen } from "../StatusCodeTable/slice";
 import styles from "./styles.module.css";
 
 interface Props {
   code: any;
+  response?: any;
   children?: React.ReactNode;
 }
 
-function StatusCodeListItem({ code, children }: Props) {
+function StatusCodeListItem({ code, response, children }: Props) {
+  const dispatch = useTypedDispatch();
+
   return (
     <button
       className={styles.apiResponseSchemaPickerOption}
       onClick={() => {
-        // setSelectedResponseCode(code);
-        // setSelectedResponse(response);
-        // setDialogOpen(true);
+        dispatch(setDialogOpen(true));
+        dispatch(setStatusCode({ code, response }));
       }}
     >
       <div>
