@@ -37,5 +37,10 @@ export function render(children: Children): string {
   if (Array.isArray(children)) {
     return children.filter((c) => c !== undefined).join("\n");
   }
-  return children ?? "";
+
+  return (
+    children
+      ?.replace(/>\s+|\s+</g, (match) => match.trim()) // Inline everything by removing whitespace
+      .replace(/\s*—\s*/g, " — ") ?? "" // Honor spacing before and after dash
+  );
 }
